@@ -1,5 +1,9 @@
 FROM youdowell/gcloud-helm
 MAINTAINER Andrew Usov <andrew.usov@youdowell.com>
 
-# Install make, git
-RUN apk --no-cache add git make
+# Install make, git, envsubst
+RUN \
+    apk add --no-cache --virtual build_deps gettext && \
+    apk add --no-cache git make libintl && \
+    cp /usr/bin/envsubst /usr/local/bin/envsubst && \
+    apk del build_deps
