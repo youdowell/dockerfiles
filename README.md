@@ -1,2 +1,3 @@
-# dockerfiles
-Docker images
+# Dockerfiles
+
+Docker images for CI builds.
